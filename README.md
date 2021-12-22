@@ -1,27 +1,38 @@
-# NgxBodyClass
+# ngx-body-class
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+>An angular directive for adding classes to the `body` element
 
-## Development server
+## Basic Usage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In your module:
+```typescript
+import { NgxBodyClassModule } from 'ngx-body-class';
 
-## Code scaffolding
+@NgModule({
+  ...
+  imports: [ NgxBodyClassModule ],
+  ...
+})
+export class MyModule {}
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In the component's template:
+```html
+<div ngxBodyClass="my-class">
+  Causes my-class to be added as a class to the body element
+</div>
+```
+```html
+<div [ngxBodyClass]="['red', isNumberEven ? 'even' : 'odd']">
+  ...
+</div>
+```
 
-## Build
+## Notes
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. This library can be of use particularly when trying to style modals that are added as children of the body element.
+2. Any classes added by the directive are removed when the directive is destroyed
 
-## Running unit tests
+## License
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+MIT

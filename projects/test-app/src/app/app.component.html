@@ -1,0 +1,31 @@
+<ul>
+  <li>
+    <button (click)="singleClass = !singleClass">Toggle `red` class</button>
+  </li>
+  <li>
+    <button (click)="doubleClass = !doubleClass">
+      Toggle `italic` and `padding` class
+    </button>
+  </li>
+  <li>
+    <button (click)="arrayOfClasses = !arrayOfClasses">
+      Toggle `red`, `italic` and `padding` classes
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="singleClass">
+  <div ngxBodyClass="red"></div>
+</div>
+
+<div *ngIf="doubleClass">
+  <div ngxBodyClass="italic padding"></div>
+</div>
+
+<div *ngIf="arrayOfClasses">
+  <div
+    [ngxBodyClass]="['italic', 'red', arrayOfClasses ? 'padding' : 'no-padding']"
+  ></div>
+</div>
+
+<main>Hello world!</main>

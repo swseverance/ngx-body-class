@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.red {
+  background: red;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.padding {
+  padding: 40px;
+}
