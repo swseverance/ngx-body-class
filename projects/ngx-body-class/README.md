@@ -1,6 +1,6 @@
 # ngx-body-class
 
->An angular directive for adding classes to the `body` element
+An angular directive for adding classes to the `body` element
 
 ## Basic Usage
 
