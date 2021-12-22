@@ -1,24 +1,38 @@
-# NgxBodyClass
+# ngx-body-class
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
+>An angular directive for adding classes to the `body` element
 
-## Code scaffolding
+## Basic Usage
 
-Run `ng generate component component-name --project ngx-body-class` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-body-class`.
-> Note: Don't forget to add `--project ngx-body-class` or else it will be added to the default project in your `angular.json` file. 
+In your module:
+```typescript
+import { NgxBodyClassModule } from 'ngx-body-class';
 
-## Build
+@NgModule({
+  ...
+  imports: [ NgxBodyClassModule ],
+  ...
+})
+export class MyModule {}
+```
 
-Run `ng build ngx-body-class` to build the project. The build artifacts will be stored in the `dist/` directory.
+In the component's template:
+```html
+<div ngxBodyClass="my-class">
+  Causes my-class to be added as a class to the body element
+</div>
+```
+```html
+<div [ngxBodyClass]="['red', isNumberEven ? 'even' : 'odd']">
+  ...
+</div>
+```
 
-## Publishing
+## Notes
 
-After building your library with `ng build ngx-body-class`, go to the dist folder `cd dist/ngx-body-class` and run `npm publish`.
+1. This library can be of use particularly when trying to style modals that are added as children of the body element.
+2. Any classes added by the directive are removed when the directive is destroyed
 
-## Running unit tests
+## License
 
-Run `ng test ngx-body-class` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+MIT
