@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/swseverance/ngx-body-class/issues"
   },
-  "homepage": "https://github.com/swseverance/ngx-body-class"
+  "homepage": "https://github.com/swseverance/ngx-body-class",
+  "keywords": [
+    "body",
+    "class",
+    "directive",
+    "angular"
+  ]
 }
