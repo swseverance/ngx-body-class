@@ -1,6 +1,6 @@
 {
   "name": "ngx-body-class",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^12.1.0",
     "@angular/core": "^12.1.0"
@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/swseverance/ngx-body-class",
   "keywords": [
-    "body",
-    "class",
+    "body class",
     "directive",
     "angular"
   ]

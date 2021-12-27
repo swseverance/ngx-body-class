@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test ngx-body-class",
+    "build-and-publish": "ng build ngx-body-class && cd dist/ngx-body-class && npm publish"
   },
   "private": true,
   "dependencies": {
