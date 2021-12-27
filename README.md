@@ -28,6 +28,10 @@ In the component's template:
 </div>
 ```
 
+## NPM
+
+[ngx-body-class](https://www.npmjs.com/package/ngx-body-class)
+
 ## Notes
 
 1. This library can be of use particularly when trying to style modals that are added as children of the body element.
