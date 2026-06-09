@@ -1,59 +1,62 @@
-# NgxBodyClass
+# ngx-body-class
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+An Angular directive for adding classes to the `body` element.
 
-## Development server
-
-To start a local development server, run:
+## Installation
 
 ```bash
-ng serve
+npm install ngx-body-class
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Usage
 
-## Code scaffolding
+Import `NgxBodyClass`:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+```typescript
+import { NgxBodyClass } from 'ngx-body-class';
 
-```bash
-ng generate component component-name
+@Component({
+  imports: [NgxBodyClass],
+  template: `<div ngxBodyClass="my-class"></div>`,
+})
+export class MyComponent {}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### String input
 
-```bash
-ng generate --help
+Pass a space-separated string to apply multiple classes:
+
+```html
+<div ngxBodyClass="modal-open dark-theme"></div>
 ```
 
-## Building
+### Dynamic binding
 
-To build the project run:
-
-```bash
-ng build
+```html
+<div [ngxBodyClass]="isModalOpen ? 'modal-open' : ''"></div>
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Array input
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
+```html
+<div [ngxBodyClass]="['modal-open', 'dark-theme']"></div>
 ```
 
-## Running end-to-end tests
+## Behavior
 
-For end-to-end (e2e) testing, run:
+- Classes are added to `document.body` when the directive is active.
+- Classes are removed when the directive is destroyed, so conditional rendering with `@if` is the intended pattern for toggling.
 
-```bash
-ng e2e
+```html
+@if (isModalOpen) {
+  <div ngxBodyClass="modal-open"></div>
+}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## NPM
 
-## Additional Resources
+[ngx-body-class](https://www.npmjs.com/package/ngx-body-class)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+
+MIT
