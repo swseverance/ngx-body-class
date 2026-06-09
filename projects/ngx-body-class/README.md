@@ -1,37 +1,57 @@
 # ngx-body-class
 
-An angular directive for adding classes to the `body` element
+An Angular directive for adding classes to the `body` element.
 
-## Basic Usage
+## Installation
 
-In your module:
+```bash
+npm install ngx-body-class
+```
+
+## Usage
+
+Import `NgxBodyClass` directly into any standalone component:
+
 ```typescript
-import { NgxBodyClassModule } from 'ngx-body-class';
+import { NgxBodyClass } from 'ngx-body-class';
 
-@NgModule({
-  ...
-  imports: [ NgxBodyClassModule ],
-  ...
+@Component({
+  imports: [NgxBodyClass],
+  template: `<div ngxBodyClass="my-class"></div>`,
 })
-export class MyModule {}
+export class MyComponent {}
 ```
 
-In the component's template:
+### String input
+
+Pass a space-separated string to apply multiple classes:
+
 ```html
-<div ngxBodyClass="my-class">
-  Causes my-class to be added as a class to the body element
-</div>
+<div ngxBodyClass="modal-open dark-theme"></div>
 ```
+
+### Dynamic binding
+
 ```html
-<div [ngxBodyClass]="['red', isNumberEven ? 'even' : 'odd']">
-  ...
-</div>
+<div [ngxBodyClass]="isModalOpen ? 'modal-open' : ''"></div>
 ```
 
-## Notes
+### Array input
 
-1. This library can be of use particularly when trying to style modals that are added as children of the body element.
-2. Any classes added by the directive are removed when the directive is destroyed
+```html
+<div [ngxBodyClass]="['modal-open', 'dark-theme']"></div>
+```
+
+## Behavior
+
+- Classes are added to `document.body` when the directive is active.
+- Classes are removed when the directive is destroyed, so conditional rendering with `@if` is the intended pattern for toggling.
+
+```html
+@if (isModalOpen) {
+  <div ngxBodyClass="modal-open"></div>
+}
+```
 
 ## License
 
