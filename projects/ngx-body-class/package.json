@@ -1,24 +1,12 @@
 {
   "name": "ngx-body-class",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^12.1.0",
-    "@angular/core": "^12.1.0"
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0"
   },
   "dependencies": {
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/swseverance/ngx-body-class.git"
-  },
-  "bugs": {
-    "url": "https://github.com/swseverance/ngx-body-class/issues"
-  },
-  "homepage": "https://github.com/swseverance/ngx-body-class",
-  "keywords": [
-    "body class",
-    "directive",
-    "angular"
-  ]
+  "sideEffects": false
 }

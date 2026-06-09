@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { NgxBodyClass } from 'ngx-body-class';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.html',
+  styleUrl: './app.scss',
+  imports: [NgxBodyClass]
 })
-export class AppComponent {
+export class App {
   singleClass = false;
   doubleClass = false;
   arrayOfClasses = false;
